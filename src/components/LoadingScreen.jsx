@@ -1,5 +1,6 @@
 import "./style/loadingscreen.css";
 import { useState, useEffect } from "react";
+import loaderImg from "../assests/backgrounds/forloadingscreen.png";
 
 function LoadingScreen() {
   const [display, setisdisplay] = useState(true);
@@ -12,11 +13,11 @@ function LoadingScreen() {
     }, 1500);
   };
 
-  useEffect(() => {
+  const imgload = () => {
     setTimeout(() => {
       changeScene();
     }, 5000);
-  }, []);
+  };
 
   return (
     <>
@@ -32,6 +33,7 @@ function LoadingScreen() {
           className="loadingscene"
         >
           <div className="cont">
+            <img onLoad={imgload} src={loaderImg}></img>
             <div className="loader"></div>
             <h2>Loading...</h2>
           </div>

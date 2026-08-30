@@ -14,7 +14,7 @@ function MainMenu() {
   const handleLoaded = () => {
     setTimeout(() => {
       setLoading(false);
-    }, 10000);
+    }, 8000);
   };
 
   useEffect(() => {
