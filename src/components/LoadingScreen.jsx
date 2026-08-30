@@ -1,24 +1,14 @@
 import "./style/loadingscreen.css";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 function LoadingScreen() {
   const [display, setisdisplay] = useState(true);
   const [fadeout, setisfadeout] = useState(false);
 
-  const navigate = useNavigate();
-
-  const startGame = () => {
-    navigate("/MainMenu");
-  };
-
   const changeScene = () => {
     setisfadeout(true);
     setTimeout(() => {
       setisdisplay(false);
-      setTimeout(() => {
-        startGame();
-      }, 5000);
     }, 1500);
   };
 

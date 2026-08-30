@@ -1,13 +1,21 @@
 import "./style/mainmenu.css";
 import MainPanel from "../components/MainPanel";
-
+import LoadingScreen from "../components/LoadingScreen";
 import Background from "./../assests/backgrounds/backg.mp4";
 import Rainy from "./../assests/audio/rainy.mp3";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function MainMenu() {
   const rainy = useRef(null);
+
+  const [loading, setLoading] = useState(true);
+
+  const handleLoaded = () => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 10000);
+  };
 
   useEffect(() => {
     const audio = rainy.current;
@@ -15,24 +23,23 @@ function MainMenu() {
     if (audio) {
       audio.volume = 0.5;
       audio.loop = true;
-
-      audio.play().catch((error) => {
-        console.log("Audio could not autoplay:", error);
-      });
+      audio.play();
     }
-
-    return () => {
-      if (audio) {
-        audio.pause();
-      }
-    };
   }, []);
 
   return (
     <div className="mainmenu-container">
+      {loading && <LoadingScreen />}
       <audio ref={rainy} src={Rainy} />
 
-      <video autoPlay muted loop playsInline src={Background} />
+      <video
+        onLoadedData={handleLoaded}
+        autoPlay
+        muted
+        loop
+        playsInline
+        src={Background}
+      />
 
       <div className="top">
         <span>
