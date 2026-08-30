@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "PixelFont";
+  src: url("../../assests/fonts/pixel.otf") format("opentype");
+}
+@font-face {
+  font-family: "secondary";
+  src: url("../../assests/fonts/secondary.otf") format("opentype");
+}
+
+.mainmenu-container {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+}
+.mainmenu-container video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.mainmenu-container .top {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "PixelFont", sans-serif;
+  width: 97%;
+  height: 30dvh;
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+.mainmenu-container .top p {
+  font-family: "secondary", sans-serif;
+  font-size: 15px;
+  color: rgb(173, 171, 171);
+}
+
+.mainmenu-container .bottom {
+  width: 97%;
+  height: 70dvh;
+}
