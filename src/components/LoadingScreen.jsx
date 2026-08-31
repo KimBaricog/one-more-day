@@ -6,6 +6,7 @@ function LoadingScreen() {
   const [display, setisdisplay] = useState(true);
   const [fadeout, setisfadeout] = useState(false);
 
+  //this code changes the scene to loading screen
   const changeScene = () => {
     setisfadeout(true);
     setTimeout(() => {
@@ -13,6 +14,7 @@ function LoadingScreen() {
     }, 1500);
   };
 
+  //this code waits for the image to load before starting the screen
   const imgload = () => {
     setTimeout(() => {
       changeScene();

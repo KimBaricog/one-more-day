@@ -11,12 +11,20 @@ function MainMenu() {
 
   const [loading, setLoading] = useState(true);
 
+  const playerProgress = localStorage.getItem("Day");
+
+  //this code handle the loading screen, when the image loaded the main lobby will load
   const handleLoaded = () => {
-    setTimeout(() => {
+    if (playerProgress) {
       setLoading(false);
-    }, 8000);
+    } else {
+      setTimeout(() => {
+        setLoading(false);
+      }, 8000);
+    }
   };
 
+  //this code controls the audio function
   useEffect(() => {
     const audio = rainy.current;
 

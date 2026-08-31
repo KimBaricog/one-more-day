@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "PixelFont";
+  src: url("../../assests/fonts/pixel.otf") format("opentype");
+}
+@font-face {
+  font-family: "secondary";
+  src: url("../../assests/fonts/secondary.otf") format("opentype");
+}
+
+.header-container {
+  width: 100%;
+  height: 12dvh;
+  background-color: rgba(26, 26, 26, 0.768);
+  color: rgb(255, 253, 186);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "secondary", sans-serif;
+  flex-shrink: 0;
+}
+.left-side {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: 50px;
+  width: calc(50% - 50px);
+}
+.left-side .day-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  border-radius: 10px;
+  height: 5dvh;
+  border: solid rgb(184, 183, 183) 1px;
+}
