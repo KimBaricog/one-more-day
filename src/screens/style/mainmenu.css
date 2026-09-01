@@ -45,3 +45,27 @@
   width: 97%;
   height: 70dvh;
 }
+@media (max-width: 768px) {
+  .bottom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .mainmenu-container .top {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    gap: 10px;
+  }
+  .mainmenu-container .top span {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-size: 35px;
+    }
+  }
+}

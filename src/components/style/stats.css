@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "PixelFont";
+  src: url("../../assets/fonts/pixel.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Secondary";
+  src: url("../../assets/fonts/secondary.otf") format("opentype");
+}
+
+.stats-container {
+  width: 80%;
+  max-width: 100%;
+  height: auto;
+
+  box-sizing: border-box;
+
+  color: white;
+  background-color: #202731;
+
+  border: 1px solid rgb(151, 152, 114);
+  border-radius: 10px;
+
+  padding: 15px;
+  margin: 20px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  overflow: hidden;
+}
+
+.stats-container h2 {
+  margin: 0;
+
+  font-family: "Secondary", sans-serif;
+  font-size: 10px;
+  font-weight: 200;
+}
+
+.progress-stats {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.progress-stats > span:first-child {
+  flex: 1;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.progress-stats > span:first-child h2 {
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.progress-bar {
+  flex: 1;
+  width: 100%;
+  height: 10px;
+
+  background-color: #353e49;
+
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-energy,
+.progress-connection,
+.progress-hope {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.progress-energy {
+  background-color: rgb(251, 238, 94);
+}
+
+.progress-connection {
+  background-color: rgb(244, 116, 218);
+}
+
+.progress-hope {
+  background-color: rgb(116, 206, 244);
+}
+
+.progress-stats > span:last-child {
+  width: 25px;
+  flex-shrink: 0;
+  text-align: right;
+}

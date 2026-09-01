@@ -36,3 +36,20 @@
 .panel-container button:hover {
   background-color: rgba(68, 68, 68, 0.768);
 }
+@media (max-width: 768px) {
+  .panel-container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .panel-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .panel-container button img {
+    display: none;
+  }
+}
