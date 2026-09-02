@@ -11,6 +11,7 @@ function DayTwo() {
 
   return (
     <>
+      <div className="header"></div>
       <div className="day-one-container">
         <h1>hello 2</h1>
       </div>
