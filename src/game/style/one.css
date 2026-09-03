@@ -1,17 +1,8 @@
 .day-one-container {
   background-color: #11151b;
   height: 100vh;
-  animation: fade-in 2s ease-in;
 }
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
 
-  to {
-    opacity: 1;
-  }
-}
 .day-one-container .main-container {
   display: flex;
   flex-direction: row;
@@ -21,7 +12,7 @@
   overflow: hidden;
 }
 .day-one-container .main-container .stats {
-  width: 20%;
+  width: 30%;
   background-color: #11151b;
 }
 .day-one-container .main-container .game-play {
@@ -38,9 +29,17 @@
 }
 .day-one-container .main-container .game-play .actions {
   width: 100%;
-  height: 30%;
+  height: 50%;
 
   background-color: #11151b;
   border: solid rgb(151, 152, 114) 1px;
   border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .day-one-container .main-container .stats {
+    display: none;
+  }
+  .day-one-container .main-container .game-play {
+    width: 100%;
+  }
 }

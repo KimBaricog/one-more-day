@@ -7,7 +7,7 @@ function Header() {
 
   useEffect(() => {
     setDisplay(Dayscalendar);
-  }, []);
+  }, [Dayscalendar]);
 
   return (
     <>

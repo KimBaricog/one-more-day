@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "PixelFont";
+  src: url("../../assests/fonts/pixel.otf") format("opentype");
+}
+@font-face {
+  font-family: "secondary";
+  src: url("../../assests/fonts/secondary.otf") format("opentype");
+}
+
+.actions-container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.actions-container h2 {
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-family: "secondary", sans-serif;
+  color: white;
+}
+
+.actions-list {
+  display: flex;
+  gap: 12px;
+}
+
+.action-button {
+  min-height: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  background: #171b24;
+  border: 1px solid #343b4a;
+  border-radius: 10px;
+
+  color: #d9dce5;
+  cursor: pointer;
+
+  font-family: "secondary", sans-serif;
+
+  transition: 0.2s ease;
+}
+
+.action-button:hover {
+  transform: translateY(-3px);
+  background: #202633;
+}
+
+.action-button:active {
+  transform: translateY(0);
+}
+
+.action-icon {
+  width: 70px;
+}
+
+.action-label {
+  font-size: 10px;
+  text-align: center;
+}

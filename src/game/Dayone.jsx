@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
-import day1Image from "../assests/backgrounds/day1.png";
+import day1Image from "../assests/backgrounds/Daybackground/fog-day1.png";
 import Stats from "../components/Stats";
 import "./style/one.css";
 import LoadingScreen from "../components/LoadingScreen";
+import Actions from "../components/Actions";
 
 function Dayone() {
   const navigate = useNavigate();
@@ -24,7 +25,9 @@ function Dayone() {
   }, [navigate]);
 
   const removeLoading = () => {
-    setDisplayLoading(false);
+    setTimeout(() => {
+      setDisplayLoading(false);
+    }, 5000);
   };
 
   // Preload the background image
@@ -44,7 +47,7 @@ function Dayone() {
 
   return (
     <div className="day-one-container">
-      {displayLoading && <LoadingScreen />}
+      {displayLoading && <LoadingScreen text="CHAPTER 1 — THE FOG " />}
 
       <Header />
 
@@ -59,7 +62,9 @@ function Dayone() {
             style={{ backgroundImage: `url(${day1Image})` }}
           ></div>
 
-          <div className="actions">actions</div>
+          <div className="actions">
+            <Actions />
+          </div>
         </div>
       </div>
     </div>

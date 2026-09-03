@@ -26,19 +26,13 @@ function MainMenu() {
 
   //this code controls the audio function
   useEffect(() => {
-    const audio = rainy.current;
-
-    if (audio) {
-      audio.volume = 0.5;
-      audio.loop = true;
-      audio.play();
-    }
-  }, []);
+    rainy.current.play();
+  }, [handleLoaded]);
 
   return (
     <div className="mainmenu-container">
-      {loading && <LoadingScreen />}
-      <audio ref={rainy} src={Rainy} />
+      <audio ref={rainy} src={Rainy} type="audio/mpeg" />
+      {loading && <LoadingScreen text="Every Single Day Counts" />}
 
       <video
         onLoadedData={handleLoaded}

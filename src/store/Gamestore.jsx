@@ -10,8 +10,8 @@ export const useGameStore = create(
     (set) => ({
       energy: 90,
       connection: 30,
-      hope: 35,
-      stress: 25,
+      hope: 40,
+      stress: 80,
 
       setEnergy: (energy) => set({ energy: clamp(energy) }),
 

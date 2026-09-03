@@ -1,21 +1,70 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+
+import Header from "../components/Header";
+import { useNavigate } from "react-router-dom";
+import day1Image from "../assests/backgrounds/day1.png";
+import Stats from "../components/Stats";
+import "./style/one.css";
+import LoadingScreen from "../components/LoadingScreen";
 
 function DayTwo() {
+  const navigate = useNavigate();
+  const [displayLoading, setDisplayLoading] = useState(true);
+
   useEffect(() => {
     const progress = localStorage.getItem("Day");
 
     if (progress === null) {
       localStorage.setItem("Day", "2");
     }
+    if (progress > 0 && progress != 2) {
+      navigate("/");
+    }
+  }, [navigate]);
+
+  const removeLoading = () => {
+    setTimeout(() => {
+      setDisplayLoading(false);
+    }, 5000);
+  };
+
+  // Preload the background image
+  useEffect(() => {
+    const img = new Image();
+
+    img.onload = removeLoading;
+    img.onerror = removeLoading; // Remove loading screen even if image fails
+
+    img.src = day1Image;
+
+    return () => {
+      img.onload = null;
+      img.onerror = null;
+    };
   }, []);
 
   return (
-    <>
-      <div className="header"></div>
-      <div className="day-one-container">
-        <h1>hello 2</h1>
+    <div className="day-one-container">
+      {displayLoading && <LoadingScreen text="Day 2 — The Room" />}
+
+      <Header />
+
+      <div className="main-container">
+        <div className="stats">
+          <Stats />
+        </div>
+
+        <div className="game-play">
+          <div
+            className="img-container"
+            style={{ backgroundImage: `url(${day1Image})` }}
+          ></div>
+
+          <div className="actions">actions</div>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
+
 export default DayTwo;

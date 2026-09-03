@@ -2,50 +2,33 @@ import { useGameStore } from "../store/Gamestore";
 import "./style/stats.css";
 
 function Stats() {
-  const energy = useGameStore((state) => state.energy);
-  const hope = useGameStore((state) => state.hope);
-  const connection = useGameStore((state) => state.connection);
+  const { energy, hope, connection, stress } = useGameStore();
+
+  const stats = [
+    { name: "Energy", value: energy, className: "progress-energy" },
+    { name: "Connection", value: connection, className: "progress-connection" },
+    { name: "Hope", value: hope, className: "progress-hope" },
+    { name: "Stress", value: stress, className: "progress-stress" },
+  ];
 
   return (
     <div className="stats-container">
-      <div className="progress-stats">
-        <span className="stat-info">
-          <h2>Energy</h2>
+      {stats.map((stat) => (
+        <div className="progress-stats" key={stat.name}>
+          <span className="stat-info">
+            <h2>{stat.name}</h2>
 
-          <div className="progress-bar">
-            <div className="progress-energy" style={{ width: `${energy}%` }} />
-          </div>
-        </span>
+            <div className="progress-bar">
+              <div
+                className={stat.className}
+                style={{ width: `${stat.value}%` }}
+              />
+            </div>
+          </span>
 
-        <span className="stat-value">{energy}</span>
-      </div>
-
-      <div className="progress-stats">
-        <span className="stat-info">
-          <h2>Connection</h2>
-
-          <div className="progress-bar">
-            <div
-              className="progress-connection"
-              style={{ width: `${connection}%` }}
-            />
-          </div>
-        </span>
-
-        <span className="stat-value">{connection}</span>
-      </div>
-
-      <div className="progress-stats">
-        <span className="stat-info">
-          <h2>Hope</h2>
-
-          <div className="progress-bar">
-            <div className="progress-hope" style={{ width: `${hope}%` }} />
-          </div>
-        </span>
-
-        <span className="stat-value">{hope}</span>
-      </div>
+          <span className="stat-value">{stat.value}</span>
+        </div>
+      ))}
     </div>
   );
 }

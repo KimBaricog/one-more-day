@@ -2,7 +2,7 @@ import "./style/loadingscreen.css";
 import { useState, useEffect } from "react";
 import loaderImg from "../assests/backgrounds/forloadingscreen.png";
 
-function LoadingScreen() {
+function LoadingScreen({ text }) {
   const [display, setisdisplay] = useState(true);
   const [fadeout, setisfadeout] = useState(false);
 
@@ -18,7 +18,7 @@ function LoadingScreen() {
   const imgload = () => {
     setTimeout(() => {
       changeScene();
-    }, 5000);
+    }, 2000);
   };
 
   return (
@@ -28,7 +28,7 @@ function LoadingScreen() {
           style={{ display: display ? "flex" : "none" }}
           className={`firstscene ${fadeout ? "fade-out" : ""}`}
         >
-          <h1>Every Single Day Counts</h1>
+          <h1>{text}</h1>
         </div>
         <div
           style={{ display: display ? "none" : "flex" }}
